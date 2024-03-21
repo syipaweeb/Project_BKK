@@ -71,7 +71,7 @@ class DataMitraController extends Controller
             'nama_perusahaan' => 'required',
             'deskripsi_perusahaan' => 'required',
             'nomor_telepon' => 'required',
-            'email' => 'required', // Specify table and column
+            'email' => 'required',
             'lokasi' => 'required'
         ];
 
