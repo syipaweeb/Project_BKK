@@ -10,10 +10,12 @@
     <meta content="Admin Dashboard" name="description">
     <meta content="Mannatthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="assets/images/Logo BKK.png">
+    <link rel="{{ asset('shortcut icon" href="assets/images/Logo BKK.png')}}">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -60,19 +62,20 @@
                                         class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="Profil bkk.html">Profil BKK</a></li>
+                                
                                 <li><a href="manajemen user.html">Manajemen User</a></li>
 
                             </ul>
                         </li>
                         <li>
-                            <a href="manajemen mitra.html" class="waves-effect"><i class="bi bi-buildings"></i>
+                            <a href="{{ route('data_mitra.index') }}" class="waves-effect"><i class="bi bi-buildings"></i>
                                 <span>Manajemen Mitra</span></a>
                         </li>
                         <li>
                             <a href="manajemen siswa.html" class="waves-effect"><i class="bi bi-people"></i> <span>
                                     Manajemen Siswa </span>
 
-                        <li><a href="Bursa kerja.html" class="waves-effect"><i class="bi bi-suitcase-lg"></i>
+                        <li><a href="{{ route('loker.index') }}" class="waves-effect"><i class="bi bi-suitcase-lg"></i>
                                 <span>Bursa kerja</span></a>
                         </li>
                         <li><a href="pengumuman.html" class="waves-effect"><i class="bi bi-megaphone"></i>
@@ -141,6 +144,10 @@
     <script src="{{ asset('assets/pages/table-edit.init.js') }}"></script><!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
+
+    <!-- Plugins Init js -->
+    <script src="{{ asset('assets/pages/form-advanced.js')}}"></script><!-- App js -->
+    <script src="{{ asset('assets/js/app.js')}}"></script>
 </body>
 <!-- Mirrored from mannatthemes.com/zoogler/vertical/tables-editable.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 10:32:27 GMT -->
 

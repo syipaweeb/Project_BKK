@@ -12,12 +12,12 @@ class DataMitraController extends Controller
     public function index()
     {
         $data_mitras = DataMitra::all();
-        return view('Admin.mitra', compact('data_mitras'));
+        return view('admin.Mitra.mitra', compact('data_mitras'));
     }
 
     public function create()
     {
-        return view('Admin.tambah_mitra');
+        return view('admin.Mitra.tambah_mitra');
     }
 
     public function store(Request $request)
@@ -59,7 +59,7 @@ class DataMitraController extends Controller
 
     public function edit(DataMitra $data_mitra)
     {
-        return view('Admin.edit_mitra', compact('data_mitra'));
+        return view('admin.Mitra.edit_mitra', compact('data_mitra'));
     }
 
     public function update(Request $request, DataMitra $data_mitra)

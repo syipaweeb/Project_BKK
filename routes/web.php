@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\DataMitraController;
+use App\Http\Controllers\LokerController;
+use App\Http\controllers\PelamarController;
+use App\Http\controllers\RiwayatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +22,10 @@ Route::get('/', function () {
 });
 
 Route::resource('data_mitra', DataMitraController::class);
+
+Route::resource('loker', LokerController::class);
+
+Route::resource('pelamar', PelamarController::class);
+
+Route::resource('riwayat', RiwayatController::class);
 // store, edit, create, destroy, update, index
