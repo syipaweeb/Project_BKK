@@ -15,6 +15,10 @@
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 
+    <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -32,11 +36,11 @@
                     class="ion-close"></i></button><!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center bg-logo">
-                    <a href="index.html" class="logo"><img src="assets/images/Logo BKK.png" height="80" alt="logo"></a>
+                    <a href="index.html" class="logo"><img src="{{ asset('assets/images/Logo BKK.png')}}" height="80" alt="logo"></a>
                 </div>
             </div>
             <!-- Logo admn -->
-            <div class="sidebar-user"><img src="assets/images/users/avatar-6.jpg" alt="user"
+            <div class="sidebar-user"><img src="{{ asset('assets/images/users/avatar-6.jpg')}}" alt="user"
                     class="rounded-circle img-thumbnail mb-1">
                 <h6 class="">Admin BKK</h6>
                 <p class="online-icon text-dark"><i class="mdi mdi-record text-success"></i>online</p>
@@ -62,7 +66,7 @@
                                         class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="Profil bkk.html">Profil BKK</a></li>
-                                
+
                                 <li><a href="manajemen user.html">Manajemen User</a></li>
 
                             </ul>
@@ -97,14 +101,14 @@
                         <li class="list-inline-item dropdown notification-list"><a
                                 class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown"
                                 href="#" role="button" aria-haspopup="false" aria-expanded="false"><img
-                                    src="assets/images/users/avatar-6.jpg" alt="user" class="rounded-circle"></a>
+                                    src="{{ asset('assets/images/users/avatar-6.jpg')}}" alt="user" class="rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown"><!-- item-->
                                 <div class="dropdown-item noti-title">
                                     <h5>Welcome</h5>
                                 </div><a class="dropdown-item" href="#"><i
                                         class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a> <a
                                     class="dropdown-item" href="#">
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('logout') }}"><i
                                             class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                             </div>
                         </li>
@@ -138,16 +142,28 @@
     <script src="{{ asset('assets/js/jquery.blockUI.js') }}"></script>
     <script src="{{ asset('assets/js/waves.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.scrollTo.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/tiny-editable/mindmup-editabletable.js') }}"></script>
-    <script src="{{ asset('assets/plugins/tiny-editable/numeric-input-example.js') }}"></script>
-    <script src="{{ asset('assets/plugins/tabledit/jquery.tabledit.js') }}"></script>
-    <script src="{{ asset('assets/pages/table-edit.init.js') }}"></script><!-- App js -->
-    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script><!-- Buttons
 
+    <script src="{{ asset('assets/plugins/datatables/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/jszip.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/pdfmake.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/vfs_fonts.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/buttons.html5.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/buttons.colVis.min.js')}}"></script><!-- Responsive examples -->
+    <script src="{{ asset('assets/plugins/datatables/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/datatables/responsive.bootstrap4.min.js')}}"></script>
 
-    <!-- Plugins Init js -->
-    <script src="{{ asset('assets/pages/form-advanced.js')}}"></script><!-- App js -->
-    <script src="{{ asset('assets/js/app.js')}}"></script>
+        <script>
+$("#datatable").DataTable();
+            </script>
+
+        {{-- <script src="{{ asset('assets/pages/datatables.init.js')}}"></script> --}}
+
+        {{-- <script src="{{ asset('assets/pages/form-advanced.js')}}"></script><!-- App js --> --}}
+        <script src="{{ asset('assets/js/app.js')}}"></script>
 </body>
 <!-- Mirrored from mannatthemes.com/zoogler/vertical/tables-editable.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 10:32:27 GMT -->
 

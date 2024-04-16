@@ -18,10 +18,12 @@
                             @method('POST')
                             <div class="form-group">
                                 <label class="font-weight-bold">Nama Perusahan</label>
-                                <input type="text"
-                                    class="form-control @error('nama_perusahaan') is-invalid @enderror"name="nama_perusahaan"
-                                    value="{{ old('nama_perusahaan') }}" name="nama"
-                                    placeholder="Masukkan Nama Perusahan">
+                                <select name="nama_perusahaan" id="nama_perusahaan" class="form-control">
+                                    <option value="">Silakan pilih</option>
+                                    @foreach ($data_mitras as $key => $DataMitra)
+                                    <option value="{{ $DataMitra->nama_perusahaan }}">{{ $DataMitra->nama_perusahaan }}</option>
+                                    @endforeach
+                                </select>
 
                                 @error('nama_perusahaan')
                                     <div class="alert alert-danger mt-2">

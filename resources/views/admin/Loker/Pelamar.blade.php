@@ -14,7 +14,7 @@
                     <h4 class="page-title"></h4>
                 </div>
             </div>
-        </div><!-- end page title end breadcrumb -->
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -46,16 +46,20 @@
                                     <td>{{ $key+1 }}</td>
 
                                     <td>{{ $Pelamar->nama_pelamar }}</td>
-                                    <td>{{ $Pelamar->nama_pekerjaan }}</td>
-                                    <td>{{ $Pelamat->alamat }}</td>
-                                    <td>{{ $Pelamar->cv}}</td>
+                                    <td>{{ $Pelamar->alamat }}</td>
+                                    <td>{{ $Pelamat->nomor_telepon }}</td>
                                 <tr>
 
-                                    <td>
+
+                                    <td><img src="{{ Storage::url('public/cv/') . $Pelamar->cv}}"
+
+                                        class="rounded" style="width: 50px"></td>
+
+                                    <!--<td>
                                         <button type="button" class="btn btn-primary"><i
                                                 class="bi bi-download"></i></button>
 
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <button type="button" class="btn btn-success">LIhat Detail
                                             Pelamar</button>

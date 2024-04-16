@@ -22,10 +22,6 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-5">
-                                    <form role="search" class=""><input type="text" placeholder="Search..."
-                                            class="form-control"> <a href="#"></a></form>
-                                </div>
                                 <div class="col-1">
                                     <a href="{{ route('data_mitra.create') }}" type="button"
                                         class="btn btn-outline-primary"><i class="bi bi-plus-lg">
@@ -34,13 +30,13 @@
                             </div>
                         </div>
 
-                        <table id="my-table" class="table table-bordered dt-responsive nowrap text-center"
+                        <table id="datatable" class="table table-bordered dt-responsive nowrap text-center"
                             style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
                                     <th scope="col">N0</th>
-                                    <th scope="col">Banner</th>
-                                    <th scope="col">Logo</th>
+                                    <th scope="col">logo</th>
+                                    <th scope="col">banner</th>
                                     <th scope="col">Nama Perusahaan</th>
                                     <th scope="col">Deskripsi</th>
                                     <th scope="col">Nomer Telepon</th>
@@ -79,19 +75,6 @@
                                     @empty
                                     @endforelse
                             </tbody>
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-end">
-                                    <li class="page-item disabled">
-                                        <a class="page-link">Previous</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </table>
                     </div>
                 </div>

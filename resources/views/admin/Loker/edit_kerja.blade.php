@@ -18,10 +18,13 @@
                             @method('PUT')
                             <div class="form-group">
                                 <label class="font-weight-bold">Nama Perusahan</label>
-                                <input type="text"
-                                    class="form-control @error('nama_perusahaan') is-invalid @enderror"name="nama_perusahaan"
-                                    value="{{ old('nama_perusahaan',$loker->nama_perusahaan) }}"
-                                    placeholder="Masukkan Nama Perusahan">
+
+                                <select name="nama_perusahaan" id="nama_perusahaan" class="form-control">
+                                    <option value="">Silakan pilih</option>
+                                    @foreach ($data_mitras as $key => $DataMitra)
+                                    <option value="{{ $DataMitra->nama_perusahaan }}" @selected($DataMitra->nama_perusahaan == $loker->nama_perusahaan)>{{ $DataMitra->nama_perusahaan }}</option>
+                                    @endforeach
+                                </select>
 
                                 @error('nama_perusahaan')
                                     <div class="alert alert-danger mt-2">
@@ -66,7 +69,7 @@
                                 <input class="form-control" type="file" id="formFile" name="logo">
 
                             </div>
-                            
+
                             <div class="form-group">
                                 <label class="font-weight-bold">Lokasi</label>
                                 <input type="text"class="form-control @error('lokasi') is-invalid @enderror"

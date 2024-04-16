@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Loker;
+use App\Models\DataMitra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -15,8 +16,10 @@ class LokerController extends Controller
         return view('admin.loker.Bursa', compact('lokers'));
     }
     public function create()
+
     {
-        return view('admin.loker.tambah_kerja');
+        $data_mitras = DataMitra::all();
+        return view('admin.loker.tambah_kerja', compact('data_mitras'));
     }
     public function store(Request $request)
     {
@@ -65,7 +68,8 @@ class LokerController extends Controller
 
     public function edit(Loker $loker)
     {
-        return view('admin.loker.edit_kerja', compact('loker'));
+        $data_mitras = DataMitra::all();
+        return view('admin.loker.edit_kerja', compact('loker', 'data_mitras'));
     }
 
     public function update( Request $request, Loker $loker)

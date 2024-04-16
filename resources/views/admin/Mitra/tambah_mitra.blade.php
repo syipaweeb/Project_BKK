@@ -18,12 +18,12 @@
                                 @csrf
                                 @method('POST')
                                 <div class="mb-3">
-                                    <label for="formFile" class="form-label">Masukan Banner</label>
+                                    <label for="formFile" class="form-label">Masukan logo</label>
                                     <input class="form-control" type="file" id="formFile" name="banner">
 
                                 </div>
                                 <div class="mb-3">
-                                    <label for="formFile" class="form-label">Logo</label>
+                                    <label for="formFile" class="form-label">Masukan banner</label>
                                     <input class="form-control" type="file" id="formFile" name="logo">
                                 </div>
 
