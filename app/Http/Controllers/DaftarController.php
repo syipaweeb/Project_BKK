@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProfilAlumni;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ class DaftarController extends Controller
     public function index()
     {
         return view('Auth.daftar');
+        return view('Auth.Admin.daftar');
     }
 
     // FUNGSI UNTUK MENYIMPAN USER BARU
@@ -31,7 +33,15 @@ class DaftarController extends Controller
         $validasiData['level'] = 'alumni';
 
         // SIMPAN DATA KE TABLE USER
-        User::create($validasiData);
+        $user=User::create($validasiData);
+
+        ProfilAlumni::insert([
+            'user_id' => $user->id,
+            'jenis_kelamin' => '',
+            'lokasi' => '',
+            'profesi' => '',
+            'foto_profil' => '',
+        ]);
 
         // JIKA BERHASIL LEMPAR KE HALAMAN LOGIN
         return redirect('/login')->with('berhasil', 'Akun Anda berhasil dibuat, silahkan login');

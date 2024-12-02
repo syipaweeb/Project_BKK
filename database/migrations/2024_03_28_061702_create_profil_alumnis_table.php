@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('jenis_kelamin');
             $table->string('lokasi');
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,9 @@
 @extends('layouts.auth')
 @section('content')
 
+<!-- PAGE TITLE HERE -->
+<title>DAFTAR | BKK DOSQ-28</title>
+
 <div class="section-full site-bg-white">
 
     <div class="container-fluid">
@@ -8,7 +11,7 @@
             <div class="col-xl-8 col-lg-6 col-lg-5 twm-log-reg-media-wrap">
                 <div class="twm-log-reg-media">
                     <div class="twm-l-media">
-                        <img src="{{ asset('asset landing page/images/login-bg.png') }}" alt="">
+                        <img src="{{ asset('alumni/assets/images/login-bg.png') }}" width="auto" alt="">
                     </div>
                 </div>
             </div>
@@ -16,7 +19,7 @@
                 <div class="twm-log-reg-form-wrap">
                     <div class="twm-log-reg-logo-head">
                         <a href="index.html">
-                            <img src="{{ asset('asset landing page/images/logo bkk.png') }}" alt=""
+                            <img src="{{ asset('assets/images/logo bkk.png') }}" width="100px" alt=""
                                 class="logo">
                         </a>
                     </div>

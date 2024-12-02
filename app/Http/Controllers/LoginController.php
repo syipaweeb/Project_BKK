@@ -24,29 +24,25 @@ class LoginController extends Controller
 
         $dataLogin = $request->validate($aturan);
 
-        if(Auth::attempt($dataLogin)){
+        if (Auth::attempt($dataLogin)) {
             $request->session()->regenerate();
             $user = Auth::user();
-            if($user->level == 'admin'){
-                return redirect()->intended(route('loker.index'));
+            if ($user->level == 'admin') {
+                return redirect()->intended(route('beranda'));
             }
-            return redirect()->intended('/');
+            return redirect()->intended('/beranda');
         }
 
         return back()->with('gagal', 'Login gagal, periksa Email dan Password Anda');
     }
 
-    //
     public function logout(Request $request)
     {
-        //
         Auth::logout();
 
-        //
         $request->session()->invalidate();
         $request->session()->regenerate();
 
-        //
-        return redirect(Route('login'));
+        return redirect(route('beranda'));
     }
 }

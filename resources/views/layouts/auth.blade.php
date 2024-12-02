@@ -3,6 +3,8 @@
 
 <head>
     <!-- META -->
+
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('alumni/assets/css/bootstrap.min.css') }}">
     <!-- BOOTSTRAP STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{{ asset('alumni/assets/css/font-awesome.min.css') }}">

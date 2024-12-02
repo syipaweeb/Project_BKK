@@ -1,6 +1,9 @@
 @extends('layouts.auth')
 @section('content')
 
+<!-- PAGE TITLE HERE -->
+<title>LOGIN | BKK DOSQ-28</title>
+
 <div class="section-full site-bg-white">
 
     <div class="container-fluid">
@@ -8,7 +11,7 @@
             <div class="col-xl-8 col-lg-6 col-md-5 twm-log-reg-media-wrap">
                 <div class="twm-log-reg-media">
                     <div class="twm-l-media">
-                        <img src="{{ asset('alumni/assest/images/login-bg.png') }}" alt="">
+                        <img src="{{ asset('alumni/assets/images/login-bg.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -25,7 +28,7 @@
                 @endif
                     <div class="twm-log-reg-logo-head">
                         <a href="index.html">
-                            <img src="{{ asset('asset landing page/images/logo bkk.png') }}" alt=""
+                            <img src="{{ asset('assets/images/Logo BKK.png') }}" alt=""
                                 class="logo">
                         </a>
                     </div>
@@ -63,7 +66,7 @@
                                 <div class="tab-pane fade show active" id="twm-login-candidate">
                                     <div class="row">
 
-                                        <form action="/login" method="POST">
+                                        <form action="{{ route('login-auth') }}" method="POST">
                                             @csrf
 
 
@@ -102,9 +105,7 @@
                                                     <div class="form-group mb-3">
                                                         <div class="form-check">
                                                             <label class="form-check-label rem-forgot"
-                                                                for="Password4"><a href="javascript:;"
-                                                                    class="site-text-primary">Lupa
-                                                                    Sandi</a></label>
+                                                                for="Password4"></label>
                                                         </div>
                                                     </div>
                                                 </div>

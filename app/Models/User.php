@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'level',
+        'status'
     ];
 
     /**
@@ -44,5 +45,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function profil()
+    {
+        return $this->hasOne(ProfilAlumni::class);
+    }
 
+    public function riwayat()
+    {
+        return $this->hasMany(Pelamar::class);
+    }
+    
+    public function manajemen_siswa()
+    {
+        return $this->hasOne(ManajemenSiswa::class);
+    }
+
+    // Metode untuk memeriksa apakah pengguna adalah admin
+    public function isAdmin()
+    {
+        return $this->level === 'admin';
+    }
 }

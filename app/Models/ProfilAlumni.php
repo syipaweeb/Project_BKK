@@ -9,5 +9,10 @@ class ProfilAlumni extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'nomor_telepon', 'email', 'jenis_kelamin', 'lokasi'];
+    protected $fillable = [' nama', 'nomor_telepon', 'email', 'jenis_kelamin', 'lokasi', 'profesi', 'foto_profil'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

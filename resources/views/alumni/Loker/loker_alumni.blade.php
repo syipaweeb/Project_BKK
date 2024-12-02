@@ -116,71 +116,7 @@
             </div>
         </div>
     </div>
-    <!-- OUR BLOG END -->
-    <footer class="footer-dark" style="background-image: url(images/f-bg.jpg);">
-        <div class="container">
-
-            <!-- NEWS LETTER SECTION START -->
-            <div class="ftr-nw-content">
-                <div class="row">
-
-                    <div class="col-md-12">
-                        <form>
-                            <div class="ftr-nw-form">
-                                <input name="news-letter" class="form-control" placeholder="Enter Your Email" type="text">
-                                <button class="ftr-nw-subcribe-btn">Subscribe Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- NEWS LETTER SECTION END -->
-            <!-- FOOTER BLOCKES START -->
-            <div class="footer-top">
-                <div class="row">
-
-                    <div class="col-lg-6 col-md-12">
-
-                        <div class="widget widget_about">
-                            <div class="logo-footer clearfix">
-                                <a href="index.html"><img src="{{ asset('alumni/assetsimages/logo bkk.png')}}" alt=""></a>
-                            </div>
-                            <p>Bursa Kerja Khusus SMK Muhammadiyah 2 Kuningan</p>
-                            <ul class="ftr-list">
-                                <li><p><span>Alamat :</span> Jl. Raya Cigugur No.28,Kuningan. </p></li>
-                                <li><p><span>Email :</span> smkm2.kng@gmail.com</p></li>
-                                <li><p><span>No Telepon :</span>: (0232) 873475</p></li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-            </div>
-            <!-- FOOTER COPYRIGHT -->
-            <div class="footer-bottom">
-
-                <div class="footer-bottom-info">
-
-                    <div class="footer-copy-right">
-                        <span class="copyrights-text">Copyright © 2023 by thewebmax All Rights Reserved.</span>
-                    </div>
-                    <ul class="social-icons">
-                        <li><a href="javascript:void(0);" class="fab fa-facebook-f"></a></li>
-                        <li><a href="javascript:void(0);" class="fab fa-tiktok"></a></li>
-                        <li><a href="javascript:void(0);" class="fab fa-instagram"></a></li>
-                        <li><a href="javascript:void(0);" class="fab fa-youtube"></a></li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
+    
 
 
 

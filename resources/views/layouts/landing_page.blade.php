@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from thewebmax.org/jobzilla/candidate-jobs-applied.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Mar 2024 03:01:22 GMT -->
-
 <head>
     <!-- META -->
     <meta charset="utf-8">
@@ -14,11 +11,11 @@
     <meta name="description" content="" />
 
     <!-- FAVICONS ICON -->
-    <link rel="icon" href="{{ asset('alumni/assets/images/favicon.ico') }}" type="{{ asset('image/x-icon')}}" />
+    <link rel="icon" href="{{ asset('assets/images/Logo smk 2.png') }}" type="{{ asset('image/x-icon') }}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('alumni/assets/images/favicon.png') }}" />
 
     <!-- PAGE TITLE HERE -->
-    <title>Riwayat Lamaran</title>
+    <title>BKK DOSQ-28</title>
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +50,8 @@
     <!-- Swiper Slider -->
     <link rel="stylesheet" type="text/css" href="{{ asset('alumni/assets/css/style.css') }}"><!-- MAIN STYLE SHEET -->
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- THEME COLOR CHANGE STYLE SHEET -->
     <link rel="stylesheet" class="skin" type="text/css"
         href="{{ asset('alumni/assets/css/skins-type/skin-6.css') }}">
@@ -79,17 +78,14 @@
 
         <!-- HEADER START -->
         <header class="site-header header-style-3 mobile-sider-drawer-menu">
-
-            <div class="sticky-header main-bar-wraper  navbar-expand-lg">
+            <div class="sticky-header main-bar-wraper navbar-expand-lg">
                 <div class="main-bar">
-
                     <div class="container-fluid clearfix">
-
                         <div class="logo-header">
                             <div class="logo-header-inner logo-header-one">
                                 <a href="index.html">
-                                    <img src="{{ asset('alumni/assets/images/logo bkk.png')}} " style="width: 100px;" alt=""
-                                        class="default-scroll-show">
+                                    <img src="{{ asset('alumni/assets/images/logo bkk.png') }}" style="width: 100px;"
+                                        alt="" class="default-scroll-show">
                                 </a>
                             </div>
                         </div>
@@ -103,60 +99,80 @@
                             <span class="icon-bar icon-bar-three"></span>
                         </button>
 
-                        <!-- MAIN Vav -->
+                        <!-- MAIN Nav -->
                         <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
-
-                            <ul class=" nav navbar-nav">
-                                <li class="has-mega-menu"><a href="index-3.html">Beranda</a>
-
-                                </li>
-                                </li>
-                                <li class="has-child"><a href="candidate-detail.html">Profil BKK</a>
-
-                                </li>
-                                <li class="has-child"><a href="{{ route('loker_alumni') }}">Loker</a>
-
-                                </li>
-                                <li class="has-child"><a href="{{ route('mitra_alumni') }}">Mitra</a>
-
-                                </li>
-
-                                <li class="has-child"><a href="blog.html">Blog</a>
-                                </li>
-
-                                <li class="has-child"><a href="contact.html">Kontak</a>
-                                </li>
+                            <ul class="nav navbar-nav">
+                                <li class="has-mega-menu"><a href="{{ route('beranda') }}">Beranda</a></li>
+                                <li class="has-child"><a href="{{ route('profil_bkk_sekolah') }}">Profil BKK</a></li>
+                                <li class="has-child"><a href="{{ route('loker_alumni') }}">Loker</a></li>
+                                <li class="has-child"><a href="{{ route('mitra_alumni') }}">Mitra</a></li>
+                                <li class="has-child"><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
                             </ul>
-
                         </div>
+                        <!-- Pengguna sudah login -->
+                        @if (Auth::check())
+                            @if (auth()->user()->isAdmin())
+                                <li class="btn-group has-child">
+                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="{{ Storage::url('public/foto_profil/') . auth()->user()->profil->foto_profil }}"
+                                            alt="user" class="rounded-circle" width="25px">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('dashboard_admin') }}"><i
+                                                    class="bi bi-grid-1x2 m-3"></i>Dashboard Admin</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"><i
+                                                    class="bi bi-box-arrow-right m-3"></i>Logout</a></li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="btn-group has-child">
+                                    <button type="button" class="btn btn-primary dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="{{ Storage::url('public/foto_profil/') . auth()->user()->profil->foto_profil }}"
+                                            alt="user" class="rounded-circle" width="25px">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('alumni_dasboard') }}"><i
+                                                    class="bi bi-grid-1x2 m-3"></i>Dashboard Alumni</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}"><i
+                                                    class="bi bi-box-arrow-right m-3"></i>Logout</a></li>
+                                    </ul>
+                                </li>
+                            @endif
+                        @else
+                        @endif
+
 
                         <!-- Header Right Section-->
                         <div class="extra-nav header-2-nav">
-                            <div class="extra-cell">
-                                <div class="header-search">
-                                    <a href="#search" class="header-search-icon"><i class="feather-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="extra-cell">
-                                <div class="header-nav-btn-section">
-                                    <div class="twm-nav-btn-left">
-                                        <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup"
-                                            role="button">
-                                            ‎ ‎ ‎Login‎ ‎
-                                        </a>
-                                    </div>
-                                    <div class="twm-nav-btn-right">
-                                        <a href="dash-post-job.html" class="twm-nav-post-a-job">
-                                            Register
-                                        </a>
+                            @guest <!-- Memeriksa apakah pengguna belum login -->
+                                <div class="extra-cell">
+                                    <div class="header-nav-btn-section">
+                                        <div class="twm-nav-btn-left">
+                                            <a class="twm-nav-sign-up" href="{{ route('login-form') }}"
+                                                type="button">Login</a>
+                                        </div>
+                                        <div class="twm-nav-btn-right">
+                                            <a href="{{ route('daftar-form') }}" class="twm-nav-post-a-job">Register</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
+                            @else
+                                <!-- Jika pengguna sudah login -->
+                                <div class="extra-cell">
+                                    <div class="header-search">
+                                        <a href="#search" class="header-search-icon"><i class="feather-search"></i></a>
+                                    </div>
+                                </div>
+                            @endguest
                         </div>
-
-
-
 
                     </div>
 
@@ -168,9 +184,7 @@
                             <input class="form-control" value="" name="q" type="search"
                                 placeholder="Type to search" />
                             <span class="input-group-append">
-                                <button type="button" class="search-btn">
-                                    <i class="fa fa-paper-plane"></i>
-                                </button>
+                                <button type="button" class="search-btn"><i class="fa fa-paper-plane"></i></button>
                             </span>
                         </form>
                     </div>
@@ -179,14 +193,80 @@
         </header>
 
 
+
+
+
         <!-- BUTTON TOP START -->
         <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
+
+
 
 
 
     </div>
 
     @yield('content')
+
+    <!-- OUR BLOG END -->
+    <footer class="footer-dark" style="background-image: url(images/f-bg.jpg);">
+        <div class="container">
+            <!-- FOOTER BLOCKES START -->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="widget widget_about">
+                                <div class="logo-footer clearfix">
+                                    <a href="index.html"><img src="{{ asset('alumni/assets/images/logo bkk.png') }}" alt=""></a>
+                                </div>
+                                <p>Bursa Kerja Khusus SMK Muhammadiyah 2 Kuningan</p>
+                                <ul class="ftr-list">
+                                    <li>
+                                        <p><span>Alamat :</span> Jl. Raya Cigugur No.28, Kuningan.</p>
+                                    </li>
+                                    <li>
+                                        <p><span>Email :</span> smkm2.kng@gmail.com</p>
+                                    </li>
+                                    <li>
+                                        <p><span>No Telepon :</span> (0232) 873475</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="map-responsive">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7920.566424198648!2d108.468639!3d-6.975874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f142eef88290d%3A0x48dd360d8e6cbcb6!2sSMK%20Muhammadiyah%202%20Kuningan!5e0!3m2!1sen!2sid!4v1713579898866!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FOOTER COPYRIGHT -->
+            <div class="footer-bottom">
+
+                <div class="footer-bottom-info">
+
+                    <div class="footer-copy-right">
+                        <span class="copyrights-text">Copyright © 2023 by thewebmax All Rights Reserved.</span>
+                    </div>
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/groups/680701442041622/?ref=share&mibextid=NSMWBT"
+                                class="fab fa-facebook-f"></a></li>
+                        <li><a href="javascript:void(0);" class="fab fa-tiktok"></a></li>
+                        <li><a href="https://www.instagram.com/bkk_dosq28?igsh=bnk4NGtvYWF1MGkw"
+                                class="fab fa-instagram"></a></li>
+                        <li><a href="https://www.youtube.com/@smkmuhammadiyah2kuningan695" class="fab fa-youtube"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
 
 
     <!-- JAVASCRIPT  FILES ========================================= -->
@@ -215,6 +295,8 @@
     <script src="{{ asset('alumni/assets/js/switcher.js') }}"></script><!-- SHORTCODE FUCTIONS  -->
 
     <!-- STYLE SWITCHER  ======= -->
+
+
 
 </body>
 

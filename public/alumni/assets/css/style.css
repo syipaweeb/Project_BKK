@@ -13559,10 +13559,10 @@ strong {
   }
 }
 .twm-home3-banner-section .twm-home3-inner-section .twm-bnr-mid-section .twm-bnr-title-light {
-  max-width: 720px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  font-size: 66px;
+  font-size: 50px;
   line-height: 70px;
   font-weight: 300;
   color: #fff;
